@@ -9,6 +9,8 @@
     --dp-button-fill-active:#036F9D;
     --dp-button-fill-disable:#BFCAD0;
     --dp-transition-medium:0.2s;
+    --dp-black:#002C44;
+    --dp-header-height:80px;
 }
 body{
     background-color: var(--dp-login-bc);
@@ -24,4 +26,14 @@ body{
 }
 input {
     outline: none;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: var(--dp-button-fill-accent);
+    text-decoration: none;
+    display: inline-block;
 }

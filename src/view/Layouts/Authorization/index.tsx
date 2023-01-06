@@ -4,7 +4,9 @@ import { ILayout } from '../interfaces'
 
 const Authorization:FC<ILayout> = ({children}) => {
   return (
-    <section className={styles.auth}>{children}</section>
+    <main>
+      <section className={styles.auth}>{children}</section>
+    </main>
   )
 }
 

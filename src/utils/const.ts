@@ -1,5 +1,10 @@
 export const ROUTS = {
-    MAIN: '/',
+    MAIN: {
+        INDEX:'/',
+        ARHIVE:'/arhiv',
+        USERS:'/users',
+        ADMIN:'/admin'
+    },
     AUTH:'/login'
 }
 
