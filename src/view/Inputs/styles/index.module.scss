@@ -1,0 +1,22 @@
+.input{
+    &__label{
+        position: relative;
+        display: block;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+    &__text{
+        width: 100%;
+        min-height: 40px;
+        border: var(--dp-border);
+        border-radius: var(--dp-border-radius);
+        padding: 0 15px;
+        &_error{
+            position: absolute;
+            color: var(--dp-erorr-red);
+            font-size: 14px;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}

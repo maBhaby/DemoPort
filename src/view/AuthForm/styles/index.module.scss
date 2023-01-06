@@ -1,0 +1,17 @@
+.auth_form {
+  background-color: var(--dp-white);
+  border-radius: var(--dp-border-radius);
+  padding: 60px;
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__img {
+    margin-bottom: 42px;
+  }
+  &__inputs {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
