@@ -11,8 +11,6 @@ import styles from './styles/index.module.scss'
 const AuthForm: FC<FormikValues> = ({ formik }) => {
   const { handleSubmit, handleChange, values, errors} = formik
 
-  console.log(formik)
-
   return (
     <form onSubmit={handleSubmit} className={styles.auth_form}>
       <img
