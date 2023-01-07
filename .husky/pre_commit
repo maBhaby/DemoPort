@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-git diff --name-only HEAD | grep -E '\.(js|jsx)$' | xargs -t yarn lint:standard --fix
+git diff --name-only HEAD | grep -E '\.(ts|tsx)$' | xargs -t yarn lint:standard --fix
