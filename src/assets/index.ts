@@ -5,10 +5,9 @@ import filterTable from './filterTable.svg'
 import user from './user.svg'
 
 export {
-    arrow,
-    edit,
-    logo,
-    filterTable,
-    user
+  arrow,
+  edit,
+  logo,
+  filterTable,
+  user
 }
-

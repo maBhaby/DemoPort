@@ -2,10 +2,10 @@ import { FC } from 'react'
 import Layouts from '../view/Layouts'
 import Auth from '../components/Auth'
 
-const Authorization:FC = () => {
+const Authorization: FC = () => {
   return (
     <Layouts.Authorization>
-        <Auth/>
+      <Auth />
     </Layouts.Authorization>
   )
 }

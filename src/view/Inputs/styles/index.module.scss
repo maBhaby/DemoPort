@@ -12,11 +12,24 @@
         border-radius: var(--dp-border-radius);
         padding: 0 15px;
         &_error{
+            border-color: var(--dp-erorr-red);
+            animation: mount .3s ease-in-out;
+            &-text{
             position: absolute;
             color: var(--dp-erorr-red);
             font-size: 14px;
             left: 0;
             bottom: 0;
+            animation: mount .3s ease-in;
+            }
         }
+    }
+}
+
+@keyframes mount {
+    0%{
+        opacity: .5;
+    }100%{
+        opacity: 1;
     }
 }

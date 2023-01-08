@@ -4,13 +4,11 @@ import Inputs from '../Inputs'
 import Button from '../Button'
 import { BUTTON_THEME } from '../../utils/const'
 import { FormikValues } from 'formik'
-import { IInitValuesLogin } from '@/components/Auth/interface'
 
 import styles from './styles/index.module.scss'
 
 const AuthForm: FC<FormikValues> = ({ formik }) => {
-  const { handleSubmit, handleChange, values, errors} = formik
-
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } = formik
   return (
     <form onSubmit={handleSubmit} className={styles.auth_form}>
       <img
@@ -24,16 +22,18 @@ const AuthForm: FC<FormikValues> = ({ formik }) => {
         <Inputs.Text
           type='text'
           placeholder='Электронная почта'
-          name='userName'
-          erorr={errors.userName}
-          value={values.userName}
+          name='email'
+          erorr={touched.email && errors.email}
+          value={values.email}
+          onBlur={handleBlur}
           onChange={handleChange}
         />
         <Inputs.Text
           type='password'
           placeholder='Пароль'
           name='password'
-          erorr={errors.password}
+          erorr={touched.password && errors.password}
+          onBlur={handleBlur}
           value={values.password}
           onChange={handleChange}
         />

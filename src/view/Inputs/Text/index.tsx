@@ -1,6 +1,7 @@
-import React, { FC } from "react";
-import styles from "../styles/index.module.scss";
-import { IInput } from "../interfaces";
+import React, { FC } from 'react'
+import styles from '../styles/index.module.scss'
+import classNames from 'classnames'
+import { IInput } from '../interfaces'
 
 const Text: FC<IInput> = ({
   name,
@@ -9,23 +10,28 @@ const Text: FC<IInput> = ({
   onChange,
   label,
   erorr,
-  placeholder,
+  onBlur,
+  placeholder
 }) => {
   return (
     <label className={styles.input__label} htmlFor={name}>
       {Boolean(label) && label}
       <input
-        className={styles.input__text}
+        className={classNames({
+          [styles.input__text]: true,
+          [styles.input__text_error]: Boolean(erorr)
+        })}
         name={name}
         type={type}
+        onBlur={onBlur}
         onChange={onChange}
         placeholder={placeholder}
         value={value}
         id={name}
       />
-      {Boolean(erorr) && <p className={styles.input__text_error}>{erorr}</p>}
+      {Boolean(erorr) && <p className={styles['input__text_error-text']}>{erorr}</p>}
     </label>
-  );
-};
+  )
+}
 
-export default Text;
+export default Text

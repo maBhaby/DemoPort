@@ -1,12 +1,12 @@
-import * as Yup from 'yup';
-import { ERORR_MESSAGE } from '../../const';
+import * as Yup from 'yup'
+import { ERORR_MESSAGE } from '../../const'
 
 export const loginShema = Yup.object().shape({
-    userName: Yup
-      .string()
-      .email(ERORR_MESSAGE.EMAIL)
-      .required(ERORR_MESSAGE.REQUIRED),
-    password: Yup
-      .string()
-      .required(ERORR_MESSAGE.REQUIRED),
-  });
+  email: Yup
+    .string()
+    .email(ERORR_MESSAGE.EMAIL)
+    .required(ERORR_MESSAGE.REQUIRED),
+  password: Yup
+    .string()
+    .required(ERORR_MESSAGE.REQUIRED)
+})

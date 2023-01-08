@@ -1,28 +1,29 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import { useFormik } from 'formik'
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
 
 import { loginShema } from '../../utils/validationSchems/login'
 import AuthForm from '../../view/AuthForm'
-import { auth } from '../../api'
+import { ROUTS } from '../../utils/const'
+import { useUserStore } from '../../store'
 
-const Auth:FC = () => {
-  console.log(auth)
+const Auth: FC = () => {
+  const getUser = useUserStore((state) => state.fetchLogin)
+  const navigate = useNavigate()
+
   const formik = useFormik({
-    initialValues:{
-      userName:'',
-      password:''
+    initialValues: {
+      email: '',
+      password: ''
     },
-    validationSchema:loginShema,
-    onSubmit:(data, actions) => {
-      signInWithEmailAndPassword(auth, data.userName, data.password)
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+    validationSchema: loginShema,
+    onSubmit: async ({ email, password }) => {
+      getUser(email, password)
+        .then(() => navigate(ROUTS.MAIN.INDEX, { replace: true }))
+        .catch((err) => console.log(err))
     }
   })
-  return (
-    <AuthForm formik={formik} />
-  )
+  return <AuthForm formik={formik} />
 }
 
 export default Auth
