@@ -1,0 +1,20 @@
+.button{
+    border-radius: var(--dp-border-radius);
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    min-width:140px;
+    min-height: 40px;
+    &__fill{
+        background-color:var(--dp-button-fill-accent);
+        color: var(--dp-white);
+        font-weight: 500;
+        transition: var(--dp-transition-medium) ease-in-out;
+        &:hover{
+            background-color: var(--dp-button-fill-hover);
+        }
+        &:active{
+            background-color: var(--dp-button-fill-active);
+        }
+    }
+}
